@@ -1,2 +1,2 @@
 # Projetos
- Publico
+ Público
