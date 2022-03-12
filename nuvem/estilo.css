@@ -1,0 +1,26 @@
+* {
+  background-color: rgb(130, 172, 209);
+  font: normal 15pt Arial;
+  text-align: center;
+}
+h1 {
+  padding: 15px;
+  font-size: 3em;
+  background-color: aliceblue;
+  width: 450px;
+  margin: auto;
+  border-radius: 23px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.397);
+}
+div {
+  font-size: 7em;
+  border-radius: 30px;
+  width: 450px;
+  margin: auto;
+}
+footer {
+  color: white;
+  text-align: center;
+  font-style: italic;
+  text-align: end;
+}
