@@ -5,11 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fichário simples</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-
-
+    <header>
+        <h1>Fichário simples</h1>
+    </header>
+<section class="container">
+    <form id="forma">
+        <h1 id="addusuaio">
+            Add Usuário
+        </h1>
+        <div class="mensagem"></div>
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome">
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="text" id="email">
+        </div>
+        <input id="enviar" class="btn" type="submit" value="Enviar">
+    </form>
+    <ul id="usuario"></ul>
+</section>
     <script src="js.js"></script>
 </body>
 </html>
