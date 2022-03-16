@@ -54,7 +54,7 @@ header{
 .btn:hover {
     background: rgba(0, 128, 0, 0.89);
 }
-.error{
+.erro{
     background: orangered;
     color: #fff;
     padding: 5px;

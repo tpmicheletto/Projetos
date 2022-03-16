@@ -1,10 +1,15 @@
-// string
+const nomeInput = document.querySelector("#nome");
+const emailInput = document.querySelector("#email");
+const botaoEnviar = document. querySelector("#enviar");
+const msgErro = document.querySelector(".mensagem");
 
-const namef = 'thiago';
-const nomed = 'micheletto';
+botaoEnviar.addEventListener("clink", (e)=>{
+    e.preventDefault();
+    const nomeValue = nomeInput.value;
+    const emailValue = emailInput.value;
 
-console.log = ('meu nome é' + namef + ' ' + nomed);
-console.log = (`meu nome  é ${namef} ${nomed}`);
-
-const nome = ('joao,lucas,thiago,carol');
-console.log =(nome.split(","));
+    if (nomeValue ===" "|| emailValue === " "){
+        msgErro.txtContent = "Por favor preencha todos os campos!";
+        msgErro.classList = "erro";
+    }
+})
