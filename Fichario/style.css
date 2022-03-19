@@ -54,9 +54,15 @@ header{
 .btn:hover {
     background: rgba(0, 128, 0, 0.89);
 }
+#usuario {
+    margin: 10px;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+}
 .erro{
     background: orangered;
     color: #fff;
     padding: 5px;
-    margin: 5px;
+    margin: 3px;
 }
