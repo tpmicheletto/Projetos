@@ -41,12 +41,39 @@ function checarVencedor(turno) {
     }
 }
 function checarEmpate(){
-    return false;
+    let x = 0;
+    let o = 0;
+    for (index in celulas) {
+        if(!isNaN(index)){
+        if(celulas[index].classList.contains(jogador_X)){
+            x++;
+        }
+        if (celulas[index].classList.contains(jogador_O)){
+            o++;
+        }
+    }
+    }
+    return x + o === 9  ? true : false;
 }
 function encerrarJogo(vencedor = null) {
+    const telaEscura = document.getElementById("tela");
+    const h2 = document.createElement("h2");
+    const h3 = document.createElement("h3")
+    let mensagem = null;
+
+    telaEscura.style.display = "block";
+    telaEscura.appendChild(h2);
+    telaEscura.appendChild(h3);
     if (vencedor) {
-        console.log("Vencedor:" + vencedor);
+        h2.innerHTML = `O jogador ${vencedor} venceu`
+        console.log(vencedor)
     } else {
-        console.log("Empatou");
+        h3.innerHTML = "Empatou";
+        console.log('empatou')
     }
+    let contador = 3;
+    setInterval(() =>{
+    h3.innerHTML = `Reiniciando em ${contador --}`;
+    }, 1000);
+    setTimeout(()=> location.reload(), 4000)
 }
