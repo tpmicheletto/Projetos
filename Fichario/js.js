@@ -1,15 +1,15 @@
-const nomeInput = document.querySelector("#nome");
-const emailInput = document.querySelector("#email");
-const botaoEnviar = document. querySelector("#enviar");
-const msgErro = document.querySelector(".mensagem");
+const botao = document.querySelector('#enviar');
+const nome = document.querySelector("#nome")
+const email = document.querySelector("#email")
+const erroMsg = document.querySelector('.mensagem')
 
-botaoEnviar.addEventListener("clink", (e)=>{
+botao.addEventListener("click", function(e){
     e.preventDefault();
-    const nomeValue = nomeInput.value;
-    const emailValue = emailInput.value;
 
-    if (nomeValue ===" "|| emailValue === " "){
-        msgErro.txtContent = "Por favor preencha todos os campos!";
-        msgErro.classList = "erro";
+    const nomeValue =nome.value;
+    const emailValue = email.value;
+
+    if (nomeValue === "" || emailValue ===""){
+        erroMsg.innerHTML = 'Por favor preencha todos os campos.'
     }
-})
+});
