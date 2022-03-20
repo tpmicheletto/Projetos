@@ -1,6 +1,5 @@
 const celulas = document.querySelectorAll(".celula")
 //let checarTurno = true; //sigle player
-let fimJogo  = false;
 const jogador_X = "X";
 const jogador_O = "O";
 const combinacoes = [
@@ -17,33 +16,12 @@ const combinacoes = [
 document.addEventListener("click", (event) => {
     if(event.target.matches(".celula")){
         jogar(event.target.id, jogador_X)
-        setTimeout(() => bot(), 500);
+        bot()
     }
 });
-
-function bot () {
-    const posicaoDisponivel = []
-        for (index in celulas) {
-            if(!isNaN(index)) {
-                if(
-                    !celulas[index].classList.contains("X") &&
-                    !celulas[index].classList.contains("O")
-                ){
-                    posicaoDisponivel.push(index);
-                }
-            }
-        }
-        const posicaoAleatoria = Math.floor(
-            Math.random() * posicaoDisponivel.length
-        );
-        if(!fimJogo){
-        jogar(posicaoDisponivel[posicaoAleatoria], jogador_O)
-    }
-    }
-
-function jogar(id, turno){
+function jogar(id){
     const celula = document.getElementById(id)
-//    turno = checarTurno ? jogador_X : jogador_O; //single player
+ //   turno = checarTurno ? jogador_X : jogador_O; //single player
     celula.textContent = turno;
     celula.classList.add(turno);
     checarVencedor(turno);
@@ -59,9 +37,9 @@ function checarVencedor(turno) {
         encerrarJogo(turno);
     }else if (checarEmpate()){
         encerrarJogo();
-    }// else {
-    //     checarTurno = !checarTurno;
-    // }
+    } else {
+        checarTurno = !checarTurno;
+    }
 }
 function checarEmpate(){
     let x = 0;
@@ -79,7 +57,6 @@ function checarEmpate(){
     return x + o === 9  ? true : false;
 }
 function encerrarJogo(vencedor = null) {
-    fimJogo = true;
     const telaEscura = document.getElementById("tela");
     const h2 = document.createElement("h2");
     const h3 = document.createElement("h3")
@@ -95,9 +72,9 @@ function encerrarJogo(vencedor = null) {
         h3.innerHTML = "Empatou";
         console.log('empatou')
     }
-    let contador = 2;
+    let contador = 3;
     setInterval(() =>{
     h3.innerHTML = `Reiniciando em ${contador --}`;
     }, 1000);
-    setTimeout(()=> location.reload(), 3000)
+    setTimeout(()=> location.reload(), 4000)
 }
